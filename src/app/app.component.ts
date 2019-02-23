@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoapp';
+  todos: Todo[] = [];
+  
+  onAddTodo(todo: Todo) {
+    todo.id = String(this.todos.length);
+    this.todos = [...this.todos, todo];
+  }
 }

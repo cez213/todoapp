@@ -5,3 +5,6 @@
 <h1>Things I need to do for my dog</h1>
 
 <app-todo-input (add)="onAddTodo($event)"></app-todo-input>
+
+<app-todo-list [todos]="todos" (remove)="onRemoveTodo($event)" 
+    (toggleComplete)="onToggleComplete($event)"></app-todo-list>

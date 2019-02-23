@@ -1,0 +1,12 @@
+<mat-selection-list class="todo-list">
+  <mat-list-option *ngFor="let todo of todos"
+      checkboxPosition="before" (click)="toggleTodoComplete(todo)"
+      [class.completed]="todo.completed">
+    <span>
+      {{todo.description}}
+      <button mat-icon-button (click)="removeTodo(todo)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </span>
+  </mat-list-option>
+</mat-selection-list>

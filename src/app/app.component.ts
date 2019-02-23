@@ -13,4 +13,18 @@ export class AppComponent {
     todo.id = String(this.todos.length);
     this.todos = [...this.todos, todo];
   }
+
+  onRemoveTodo(todo: Todo) {
+    this.todos = this.todos.filter(t => t.id !== todo.id);
+  }
+
+  onToggleComplete(todoToUpdate: Todo) {
+    this.todos = this.todos.map(todo => {
+      if (todo.id === todoToUpdate.id) {
+        todoToUpdate.completed = !todoToUpdate.completed;
+        return todoToUpdate;
+      }
+      return todo;
+    });
+  }
 }
